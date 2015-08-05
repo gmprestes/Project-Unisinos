@@ -43,7 +43,7 @@ page.open('https://portal.asav.org.br/corpore.net/Login.aspx%3FReturnUrl%3D%2Fco
       window.setTimeout(function() {
         page.evaluate(function() {
 
-          document.getElementById('grid_ctl07_grid:RMWSelectTemplate').click();
+          document.getElementById('grid_ctl07_grid\\:RMWSelectTemplate').click();
         });
         window.setTimeout(function() {
 
