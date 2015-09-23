@@ -59,12 +59,22 @@ class TestController
         $pattern = '/<table([\w\W]*?)<\/table>/';
         preg_match($pattern, $div, $matches);
         $table = $matches[0];
-        //return $table;
+
+        $pattern = '/<table class=\"EduGridMain\"([\w\W]*?)<\/table>/';
+        preg_match($pattern, $file, $matches);
+        $table2 = $matches[0];
+
+        return [$table,$table2];
+
+
         $pattern = '/<tr([\w\W]*?)<\/tr>/'; //';
         preg_match_all($pattern, $table,$matches);
         $trs = $matches[0];
 
-        return "OK";
+        $pattern = '/<td([\w\W]*?)<\/td>/'; //';
+        preg_match_all($pattern, $trs[1],$matches);
+        $tds = $matches[0];
+        return $tds;
       //}
     }
 
